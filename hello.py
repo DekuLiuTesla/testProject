@@ -205,10 +205,10 @@ print('')
 print("Use for to print alpha")
 # for ele in alpha:
 #     print(ele)
-for i in range(0, len(alpha)):  # inverse order
-    print(alpha[len(alpha) - i - 1])
-# for index, value in enumerate(alpha):
-#     print(str(value) + " is presented in " + str(index))
+# for i in range(0, len(alpha)):  # inverse order
+#     print(alpha[len(alpha) - i - 1])
+for index, value in enumerate(alpha):
+    print(str(value) + " is presented in " + str(index))
 word = "python"
 print("Use for to print a word")
 for char in word:
