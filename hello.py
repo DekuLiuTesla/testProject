@@ -337,16 +337,16 @@ else:
 print('')
 
 print('Lets deal some exception ')
-# ss = 10
-# if ss > 5:
-#     raise Exception('x 不能大于 5。x 的值为: {}'.format(x))
+ss = 10
+if ss > 5:
+    raise Exception('x 不能大于 5。x 的值为: {}'.format(x))
 
-try:  # 执行代码
-    1 / 0
-except Exception as e:  # 发生异常时执行的代码
-    print(e.__class__)
-    print(e)
-else:
-    print('No error raised. You can resume your operation here')
-finally:
-    print('This code will run whether the code has error or not.')
+# try:  # 执行代码
+#     1 / 0
+# except Exception as e:  # 发生异常时执行的代码
+#     print(e.__class__)
+#     print(e)
+# else:
+#     print('No error raised. You can resume your operation here')
+# finally:
+#     print('This code will run whether the code has error or not.')
