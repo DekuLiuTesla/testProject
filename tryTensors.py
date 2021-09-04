@@ -49,6 +49,31 @@ print(tensor, '\n')
 # Joining tensors
 # .cat()在原有维度中扩展，可以理解为接续，而.stack()会新增一个维度进行叠加
 t1 = torch.cat([tensor, tensor, tensor], dim=1)  # cat() or stack()
-print(t1)
+print(t1, '\n')
 
 # Arithmetic Operations
+# Matrix Multiplication in three ways
+y1 = tensor @ tensor.T
+y2 = tensor.matmul(tensor.T)
+
+y3 = torch.rand_like(tensor)
+torch.matmul(tensor, tensor.T, out=y3)
+print(y1)
+
+# Element-wise product
+z1 = tensor * tensor
+z2 = tensor.mul(tensor)
+
+z3 = torch.rand_like(tensor)
+torch.mul(tensor, tensor, out=z3)
+print(z1, '\n')
+
+# tensor to one-element tensor to a Python numerical value
+agg = tensor.sum()
+agg_item = agg.item()
+print(agg_item, type(agg_item), '\n')
+
+# In-place operations
+print(tensor, '\n')
+tensor.add_(5)
+print(tensor)
