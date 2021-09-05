@@ -76,4 +76,23 @@ print(agg_item, type(agg_item), '\n')
 # In-place operations
 print(tensor, '\n')
 tensor.add_(5)
-print(tensor)
+print(tensor, '\n')
+
+# Count element numbers
+print("Number of elements: ", tensor.numel(), '\n')  # Returns the total number of elements in the input tensor
+
+# Bridge with NumPy
+t = torch.ones(5)
+print(f"t:{t}")
+n = t.numpy()
+print(f"n: {n}")
+
+t.add_(1)  # A change in the tensor reflects in the NumPy array.
+print(f"t:{t}")
+print(f"n: {n}")
+
+n = np.ones(5)
+t = torch.from_numpy(n)
+np.add(n, 1, out=n)
+print(f"t:{t}")
+print(f"n: {n}")
