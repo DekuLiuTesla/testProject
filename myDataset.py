@@ -26,7 +26,7 @@ class CustomImageDataset(Dataset):
         image = read_image(img_path)  # read image and transfer it to a tensor
         label = self.img_labels.iloc(idx, 1)  # retrieve the corresponding label
         if self.transform:
-            image = self.transform(image)
+            image = self.transform(image)  # used to modify features
         if self.target_transform:
-            image = self.target_transform(label)
+            image = self.target_transform(label)  # used to modify labels
         return image, label
