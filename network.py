@@ -40,3 +40,5 @@ logits = model(X)
 pred_probab = nn.Softmax(dim=1)(logits)  # 创建Softmax对象，再用于处理数据
 y_pred = pred_probab.argmax(1)
 print(f"Predicted class: {y_pred}")
+
+# 为什么可以以className(var)的形式直接调用方法
