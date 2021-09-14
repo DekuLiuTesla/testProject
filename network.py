@@ -35,6 +35,8 @@ print("Model structure: ", model, "\n\n")
 for name, param in model.named_parameters():
     print(f"Layer: {name} | Size: {param.size()} | Values: {param[:2]}\n")
 
+# logit means the vector of raw (non-normalized) predictions that a classification
+# model generates, which is ordinarily then passed to a normalization function
 X = torch.rand(3, 28, 28, device=device)  # a sample mini-batch of 3 images of size 28x28
 logits = model(X)
 pred_probab = nn.Softmax(dim=1)(logits)  # 创建Softmax对象，再用于处理数据
